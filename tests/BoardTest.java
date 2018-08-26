@@ -221,4 +221,25 @@ class BoardTest {
         assertEquals(false,board.checkWin(1,0));
         assertEquals(false,board.checkWin(1,2));
     }
+
+    @Test
+    void checkWin9() {
+        Board board = new Board();
+        board.put(0,0);
+        board.put(2,0);
+        board.put(1,1);
+        board.put(0,2);
+        board.put(2,2);
+        System.out.println(board.getBoardString());
+        assertEquals(true, board.getBoardString().equals(" 012\n0X-X\n1-X-\n2X-X\n"));
+        assertEquals(true,board.checkWin(0,0));
+        assertEquals(true,board.checkWin(1,1));
+        assertEquals(true,board.checkWin(2,2));
+        assertEquals(true,board.checkWin(2,0));
+        assertEquals(true,board.checkWin(0,2));
+        assertEquals(false,board.checkWin(0,1));
+        assertEquals(false,board.checkWin(2,1));
+        assertEquals(false,board.checkWin(1,0));
+        assertEquals(false,board.checkWin(1,2));
+    }
 }
