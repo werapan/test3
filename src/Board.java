@@ -122,6 +122,6 @@ public class Board {
     }
 
     public void reset() {
-        
+
     }
 }
